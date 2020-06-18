@@ -176,18 +176,21 @@
         var p = $("#amount").val();
         var r = $("#interest").val();
         var t = $("#time").val();
-        var pTotal = p * 12 * t;
-
-        var sInt = pTotal * (1 + (r / 100) * t);
-        var tr = sInt - pTotal;
-        $(".TB").text("N" + sInt.toLocaleString("en-US"));
-        $(".desc").text(
-          `Saving N${p} monthly for ${t}year(s) will result in a total balance of N${sInt}`
-        );
-        $(".TR").text("N" + tr.toLocaleString("en-US"));
-        $(".TS").text("N" + pTotal.toLocaleString("en-US"));
-        $(".desc").show();
-        $("#rise").show();
+        if (p != " " && r != " " && t != " ") {
+          var pTotal = p * 12 * t;
+          var sInt = pTotal * (1 + (r / 100) * t);
+          var tr = sInt - pTotal;
+          $(".TB").text("N" + sInt.toLocaleString("en-US"));
+          $(".desc").text(
+            `Saving N${p} monthly for ${t}year(s) will result in a total balance of N${sInt}`
+          );
+          $(".TR").text("N" + tr.toLocaleString("en-US"));
+          $(".TS").text("N" + pTotal.toLocaleString("en-US"));
+          $(".desc").show();
+          $("#rise").show();
+        } else {
+          alert("Please enter all values.");
+        }
       });
 
       // function SI(p, r, t) {
