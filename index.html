@@ -176,7 +176,7 @@
         var p = $("#amount").val();
         var r = $("#interest").val();
         var t = $("#time").val();
-        if (p != " " && r != " " && t != " ") {
+        if (p != "" && r != "" && t != "") {
           var pTotal = p * 12 * t;
           var sInt = pTotal * (1 + (r / 100) * t);
           var tr = sInt - pTotal;
