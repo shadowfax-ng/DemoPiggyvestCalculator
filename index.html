@@ -110,7 +110,7 @@
                   Total Balance
                 </h4>
                 <h1 class="TB font-weight-bolder" style="color: #144499;">
-                  N0.00
+                  ₦0.00
                 </h1>
                 <div class="row" id="rise" style="display: none;">
                   <div class="col-12 text-center">
@@ -121,8 +121,8 @@
                   class="desc font-weight-light"
                   style="color: gray; display: none; padding: 5%;"
                 >
-                  Saving N20,000 monthly will result in a total balance of
-                  N1,500,000.
+                  Saving ₦20,000 monthly will result in a total balance of
+                  ₦1,500,000.
                 </h5>
                 <hr />
                 <div class="row">
@@ -131,7 +131,7 @@
                   </div>
                   <div class="col-6">
                     <h3 class="TR font-weight-bolder" style="color: #144499;">
-                      N0.00
+                      ₦0.00
                     </h3>
                   </div>
                 </div>
@@ -142,7 +142,7 @@
                   </div>
                   <div class="col-6">
                     <h3 class="TS font-weight-bolder" style="color: #144499;">
-                      N0.00
+                      ₦0.00
                     </h3>
                   </div>
                 </div>
@@ -180,12 +180,12 @@
           var pTotal = p * 12 * t;
           var sInt = pTotal * (1 + (r / 100) * t);
           var tr = sInt - pTotal;
-          $(".TB").text("N" + sInt.toLocaleString("en-US"));
+          $(".TB").text("₦" + sInt.toLocaleString("en-US"));
           $(".desc").text(
-            `Saving N${p} monthly for ${t}year(s) will result in a total balance of N${sInt}`
+            `Saving ₦${p} monthly for ${t}year(s) will result in a total balance of ₦${sInt}`
           );
-          $(".TR").text("N" + tr.toLocaleString("en-US"));
-          $(".TS").text("N" + pTotal.toLocaleString("en-US"));
+          $(".TR").text("₦" + tr.toLocaleString("en-US"));
+          $(".TS").text("₦" + pTotal.toLocaleString("en-US"));
           $(".desc").show();
           $("#rise").show();
         } else {
