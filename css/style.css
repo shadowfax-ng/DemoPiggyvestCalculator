@@ -11,6 +11,22 @@ body {
   margin: 0;
 }
 
+.nav-item {
+  text-align: right;
+}
+
+.nav-item {
+  padding-right: 50px;
+}
+
+.nav-item a {
+  font-size: large;
+}
+
+.nav-link {
+  font-weight: bolder;
+}
+
 p,
 h1,
 h2,
@@ -64,6 +80,16 @@ form p {
   border-radius: 2%;
 }
 
+@media (max-width: 767px) {
+  .nav-item {
+    padding-right: 0px;
+  }
+}
+
+.fab {
+  color: #fff;
+}
+
 /* .inner .board {
   width: 100%;
   padding-top: 36px;
@@ -84,21 +110,6 @@ form p {
     padding-right: 30px;
   }
 }
-@media (max-width: 767px) {
-  .inner {
-    display: block;
-  }
-  .inner .image-holder {
-    width: 100%;
-  }
-  .inner form {
-    width: 100%;
-    padding: 40px 0 30px;
-  }
-
-  button {
-    margin-top: 60px;
-  }
-} */
+/*
 
 /*# sourceMappingURL=style.css.map */

@@ -1,197 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PiggyVest</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/all.css" />
-    <link
-      rel="stylesheet"
-      href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/animate.css" />
-  </head>
 
-  <body>
-    <div
-      class="wrapper wow slideInUp"
-      data-wow-duration="0.5s"
-      data-wow-delay="0.5s"
-    >
-      <!-- <div class="container">
-        <div class="row">
-          <div class="col-12 text-center">
-            <img src="images/piggyvest.png" alt="" />
-          </div>
-        </div>
-      </div> -->
-      <div class="container">
-        <div class="row">
-          <div class="col-12 text-center">
-            <img
-              src="images/icon.png"
-              alt=""
-              style="width: 20%; opacity: 30%;"
-            />
-          </div>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PiggyVest</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/all.css" />
+  <link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animate.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous" />
+</head>
+
+<body>
+
+  <div class="wrapper wow slideInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">
+    <nav class="navbar navbar-expand-sm navbar-light bg-white fixed-top">
+      <a class="navbar-brand" style="width:50%" href="#">
+        <img src="images/piggy-auth.png" style="width: 50%; overflow: hidden;" alt="">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="color: #144499;">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link font-weight-normal" style="color: #144499;" href="#">Home <span
+                class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-normal" href="#" style="color: #144499;">Stories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-normal" href="#" style="color: #144499;">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-normal" href="#" style="color: #144499;">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-normal" href="#" style="color: #144499;">Login</a>
+          </li>
+
+        </ul>
       </div>
-      <!-- <br /> -->
-      <br />
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-md-6 text-center">
-            <form action="">
-              <h1>PiggyVest Interest Calculator</h1>
+    </nav>
+    <br />
+    <div class="container" style="padding-top: 13%;">
+      <div class="row">
+        <div class="col-12 col-md-6 text-center">
+          <form action="">
+            <h1>PiggyVest Interest Calculator</h1>
+            <br />
+            <br />
+            <div class="form-group">
+              <div class="row">
+                <div class="col-6 text-right">
+                  <p>Monthly Contribution</p>
+                </div>
+                <div class="col-6">
+                  <input type="number" id="amount" placeholder="Enter Amount" class="form-control" />
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-6 text-right">
+                  <p>Interest Rate</p>
+                </div>
+                <div class="col-6">
+                  <input type="number" id="interest" placeholder="%" class="form-control" />
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-6 text-right">
+                  <p>Duration</p>
+                </div>
+                <div class="col-6">
+                  <input type="number" id="time" placeholder="Year(s)" class="form-control" />
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-12 text-right">
+                  <button type="button" class="btn-calc btn btn-primary">
+                    Calculate
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-12 col-md-6 text-center">
+          <div class="inner">
+            <div class="board">
+              <h4 style="color: gray; padding-top: 4%; padding-bottom: 0%;">
+                Total Balance
+              </h4>
+              <h1 class="TB font-weight-bolder" style="color: #144499;">
+                ₦0.00
+              </h1>
+              <div class="row" id="rise" style="display: none;">
+                <div class="col-12 text-center">
+                  <img src="images/rise.gif" alt="" />
+                </div>
+              </div>
+              <h5 class="desc font-weight-normal" style="color: gray; display: none; padding: 5%;">
+                Saving ₦20,000 monthly will result in a total balance of
+                ₦1,500,000.
+              </h5>
+              <hr />
+              <div class="row">
+                <div class="col-6">
+                  <h3 style="color: gray;">Total Returns:</h3>
+                </div>
+                <div class="col-6">
+                  <h3 class="TR font-weight-bolder" style="color: #144499;">
+                    ₦0.00
+                  </h3>
+                </div>
+              </div>
               <br />
-              <br />
-              <div class="form-group">
-                <div class="row">
-                  <div class="col-6 text-right">
-                    <p>Monthly Contribution</p>
-                  </div>
-                  <div class="col-6">
-                    <input
-                      type="number"
-                      id="amount"
-                      placeholder="Enter Amount"
-                      class="form-control"
-                    />
-                  </div>
+              <div class="row">
+                <div class="col-6">
+                  <h3 style="color: gray;">Total Savings:</h3>
+                </div>
+                <div class="col-6">
+                  <h3 class="TS font-weight-bolder" style="color: #144499;">
+                    ₦0.00
+                  </h3>
                 </div>
               </div>
-              <div class="form-group">
-                <div class="row">
-                  <div class="col-6 text-right">
-                    <p>Interest Rate</p>
-                  </div>
-                  <div class="col-6">
-                    <input
-                      type="number"
-                      id="interest"
-                      placeholder="%"
-                      class="form-control"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="row">
-                  <div class="col-6 text-right">
-                    <p>Duration</p>
-                  </div>
-                  <div class="col-6">
-                    <input
-                      type="number"
-                      id="time"
-                      placeholder="Year(s)"
-                      class="form-control"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="row">
-                  <div class="col-12 text-right">
-                    <button type="button" class="btn-calc btn btn-primary">
-                      Calculate
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="col-12 col-md-6 text-center">
-            <div class="inner">
-              <div class="board">
-                <h4 style="color: gray; padding-top: 4%; padding-bottom: 0%;">
-                  Total Balance
-                </h4>
-                <h1 class="TB font-weight-bolder" style="color: #144499;">
-                  ₦0.00
-                </h1>
-                <div class="row" id="rise" style="display: none;">
-                  <div class="col-12 text-center">
-                    <img src="images/rise.gif" alt="" />
-                  </div>
-                </div>
-                <h5
-                  class="desc font-weight-normal"
-                  style="color: gray; display: none; padding: 5%;"
-                >
-                  Saving ₦20,000 monthly will result in a total balance of
-                  ₦1,500,000.
-                </h5>
-                <hr />
-                <div class="row">
-                  <div class="col-6">
-                    <h3 style="color: gray;">Total Returns:</h3>
-                  </div>
-                  <div class="col-6">
-                    <h3 class="TR font-weight-bolder" style="color: #144499;">
-                      ₦0.00
-                    </h3>
-                  </div>
-                </div>
-                <br />
-                <div class="row">
-                  <div class="col-6">
-                    <h3 style="color: gray;">Total Savings:</h3>
-                  </div>
-                  <div class="col-6">
-                    <h3 class="TS font-weight-bolder" style="color: #144499;">
-                      ₦0.00
-                    </h3>
-                  </div>
-                </div>
-                <hr />
-                <div class="row">
-                  <div class="col-12 text-center">
-                    <img src="images/piggyvest.png" alt="" />
-                  </div>
+              <hr />
+              <div class="row">
+                <div class="col-12 text-center">
+                  <img src="images/piggyvest.png" alt="" />
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <br />
-      <div class="container">
-        <div class="row">
-          <div class="col-12 text-right">
-            <img src="images/piggyvest.png" alt="" style="opacity: 5%;" />
-          </div>
+    </div>
+    <br />
+    <br>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-3 text-left">
+          <img src="images/piggyvest.png" alt="" style="opacity: 0%;" />
+        </div>
+        <div class="col-9 text-right" style="padding-bottom: 2%; padding-top: 0%;">
+          <h5 class="font-weight-normal" style="color: white; font-style:italic; ">Follow Us on Social Media</h5>
+          <a href="#"><i class="fab fa-instagram fa-2x wow pulse" data-wow-duration="0.5s" data-wow-delay="10s"
+              data-wow-iteration="infinite" style="margin-right: 5%;"></i></a>
+          <a href="#"><i class="fab fa-facebook fa-2x wow pulse" data-wow-duration="0.5s" data-wow-delay="10s"
+              data-wow-iteration="infinite" style="margin-right: 5%;"></i></a>
+          <a href="#"><i class="fab fa-twitter fa-2x wow pulse" data-wow-duration="0.5s" data-wow-delay="10s"
+              data-wow-iteration="infinite" style="margin-right: 0%;"></i></a>
         </div>
       </div>
     </div>
 
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script>
-      new WOW().init();
-      $(".btn-calc").click(function () {
-        var p = $("#amount").val();
-        var r = $("#interest").val();
-        var t = $("#time").val();
-        if (p != "" && r != "" && t != "") {
-          var pTotal = p * 12 * t;
-          var sInt = pTotal * (1 + (r / 100) * t);
-          var tr = sInt - pTotal;
-          $(".TB").text("₦" + sInt.toLocaleString("en-US"));
-          $(".desc").text(
-            `Saving ₦${p} monthly for ${t}year(s) will result in a total balance of ₦${sInt}.`
-          );
-          $(".TR").text("₦" + tr.toLocaleString("en-US"));
-          $(".TS").text("₦" + pTotal.toLocaleString("en-US"));
-          $(".desc").show();
-          $("#rise").show();
-        } else {
-          alert("Please enter all values.");
-        }
-      });
+
+
+  </div>
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script>
+    new WOW().init();
+    $(".btn-calc").click(function () {
+      var p = $("#amount").val();
+      var r = $("#interest").val();
+      var t = $("#time").val();
+      if (p != "" && r != "" && t != "") {
+        var pTotal = p * 12 * t;
+        var sInt = pTotal * (1 + (r / 100) * t);
+        var tr = sInt - pTotal;
+        $(".TB").text("₦" + sInt.toLocaleString("en-US"));
+        $(".desc").text(
+          `Saving ₦${p} monthly for ${t}year(s) will result in a total balance of ₦${sInt}.`
+        );
+        $(".TR").text("₦" + tr.toLocaleString("en-US"));
+        $(".TS").text("₦" + pTotal.toLocaleString("en-US"));
+        $(".desc").show();
+        $("#rise").show();
+      } else {
+        alert("Please enter all values.");
+      }
+    });
 
       // function SI(p, r, t) {
       //   var sInt = p * (1 + (r / 100) * t);
@@ -199,6 +203,7 @@
       // }
 
       // SI(4000, 10, 5);
-    </script>
-  </body>
+  </script>
+</body>
+
 </html>
